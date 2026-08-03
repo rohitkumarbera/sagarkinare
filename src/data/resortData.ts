@@ -140,7 +140,7 @@ export const ORIGINAL_IMAGES = {
   beachPine2: "./images/original/6603_1684906754.jpg",
   bonfireNight: "./images/original/184405245.jpg-7147_1684908065.jpg",
   receptionLobby: "./images/original/184405510.jpg-1738_1684908027.jpg",
-  logo: "./images/original/sagar_kinare_logo_transparent.png"
+  logo: "./images/original/sagar_kinare_logo_trimmed.png"
 };
 
 export const ROOMS: Room[] = [
