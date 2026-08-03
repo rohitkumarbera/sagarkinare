@@ -1,4 +1,7 @@
-# Redirect wp-admin and wp-login.php to main working WordPress Login
+AddType video/mp4 .mp4 .MP4
+AddType video/webm .webm
+AddType video/ogg .ogv
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /clientwebsite/sagarkinaretajpur/
