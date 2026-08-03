@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 80) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -45,8 +45,12 @@ export const Header: React.FC = () => {
     <>
       <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
         
-        {/* CLEAN LUXURY TOP INFORMATION BAR */}
-        <div className={`bg-[#1F1A17] text-[#F8F6F2] transition-all duration-300 ${isScrolled ? 'h-0 py-0 overflow-hidden opacity-0' : 'h-[44px] flex items-center opacity-100 border-b border-gold/15'}`}>
+        {/* CLEAN LUXURY TOP INFORMATION BAR (#1F1A17 Background) */}
+        <div 
+          className={`bg-[#1F1A17] text-[#F8F6F2] transition-all duration-300 ${
+            isScrolled ? 'h-0 py-0 overflow-hidden opacity-0' : 'h-[44px] flex items-center opacity-100 border-b border-white/10'
+          }`}
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between text-[11px] font-poppins tracking-wide">
             
             {/* LEFT: Phone & Email */}
@@ -59,7 +63,7 @@ export const Header: React.FC = () => {
                 <span>{HOTEL_INFO.phonePrimary}</span>
               </a>
 
-              <span className="text-[#C8A45A]/30 hidden md:inline">•</span>
+              <span className="text-[#C8A45A]/40 hidden md:inline">•</span>
 
               <a
                 href={`mailto:${HOTEL_INFO.email}`}
@@ -83,7 +87,7 @@ export const Header: React.FC = () => {
                 <span>Tajpur Beach</span>
               </div>
 
-              <span className="text-[#C8A45A]/30">•</span>
+              <span className="text-[#C8A45A]/40">•</span>
 
               <TajpurWeather />
             </div>
@@ -101,32 +105,44 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* MAIN LUXURY NAVIGATION BAR (Height: 90px, BG: #F8F5F0, Border: 1px solid #E9E2D8) */}
-        <div className={`w-full bg-[#F8F5F0] border-b border-[#E9E2D8] transition-all duration-300 ${isScrolled ? 'shadow-md py-0' : ''}`}>
+        {/* MAIN NAVIGATION BAR (Transparent over Hero on load, Solid #1E1B18 on scroll > 80px) */}
+        <div 
+          className={`w-full transition-all duration-300 ${
+            isScrolled
+              ? 'bg-[#1E1B18]/95 backdrop-blur-md border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.15)] py-0'
+              : 'border-b border-white/10 py-0'
+          }`}
+          style={{
+            background: isScrolled
+              ? 'rgba(30, 27, 24, 0.96)'
+              : 'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.20) 60%, rgba(0,0,0,0) 100%)'
+          }}
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[90px] flex items-center justify-between">
             
-            {/* LEFT: OFFICIAL SAGAR KINARE LOGO (Exact User Dimensions: Desktop 220-240px, Tablet 200px, Mobile 160px) */}
+            {/* LEFT: UNCROPPED OFFICIAL SAGAR KINARE LOGO */}
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="block py-1">
                 <img
                   src={ORIGINAL_IMAGES.logo}
                   alt="Sagar Hotel & Resort, Tajpur Logo"
-                  className="w-[160px] md:w-[200px] lg:w-[240px] h-auto max-h-[60px] object-contain transition-transform duration-300 hover:scale-[1.02]"
+                  className="w-[160px] md:w-[200px] lg:w-[240px] h-auto max-h-[60px] object-contain transition-transform duration-300 hover:scale-[1.02] drop-shadow-md"
                 />
               </Link>
             </div>
 
-            {/* CENTER: PERFECTLY CENTERED NAVIGATION (Gap: 32px, Hover: #C8A45A) */}
+            {/* CENTER: PERFECTLY CENTERED NAVIGATION MENU (Gap: 32px, Text: #FFFFFF, Hover: #C8A45A) */}
             <nav className="hidden lg:flex items-center justify-center gap-[32px] flex-grow px-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`font-poppins text-xs font-semibold tracking-wider uppercase transition-all duration-300 relative py-1.5 whitespace-nowrap ${
+                  className={`font-poppins text-xs font-semibold tracking-wider uppercase transition-all duration-300 relative py-1.5 whitespace-nowrap drop-shadow-sm ${
                     isActive(link.path)
                       ? 'text-[#C8A45A] font-bold'
-                      : 'text-[#1E1B18]/85 hover:text-[#C8A45A]'
+                      : 'text-white hover:text-[#C8A45A]'
                   }`}
+                  style={{ textShadow: '0 2px 4px rgba(0,0,0,0.4)' }}
                 >
                   {link.name}
                   {isActive(link.path) && (
@@ -136,11 +152,11 @@ export const Header: React.FC = () => {
               ))}
             </nav>
 
-            {/* RIGHT: LUXURY GOLD BOOK BUTTON (Pill Shaped, Soft Shadow, Hover Animation) */}
+            {/* RIGHT: LUXURY GOLD BOOK BUTTON (BG: #C8A45A, Hover: #B88A44, Text: White) */}
             <div className="hidden sm:flex items-center flex-shrink-0">
               <button
                 onClick={() => setIsBookingModalOpen(true)}
-                className="px-7 py-3 rounded-full bg-[#B88A44] hover:bg-[#a07739] text-white font-poppins font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-goldGlow hover:scale-[1.03] active:scale-95 transition-all duration-300 flex items-center gap-2"
+                className="px-7 py-3 rounded-full bg-[#C8A45A] hover:bg-[#B88A44] text-white font-poppins font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-goldGlow hover:scale-[1.03] active:scale-95 transition-all duration-300 flex items-center gap-2"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Book Your Stay</span>
@@ -150,7 +166,7 @@ export const Header: React.FC = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden text-[#1E1B18] p-2 hover:text-[#C8A45A] transition-colors duration-300"
+              className="lg:hidden text-white p-2 hover:text-[#C8A45A] transition-colors duration-300"
               aria-label="Toggle Navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -161,23 +177,25 @@ export const Header: React.FC = () => {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#F8F5F0] border-b border-[#E9E2D8] px-6 pt-4 pb-6 space-y-3 animate-fade-in text-[#1E1B18] shadow-xl">
+          <div className="lg:hidden bg-[#1E1B18] border-b border-white/10 px-6 pt-4 pb-6 space-y-3 animate-fade-in text-white shadow-2xl">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 className={`block py-2.5 text-xs font-poppins uppercase tracking-wider font-semibold transition-colors duration-300 ${
-                  isActive(link.path) ? 'text-[#C8A45A] font-bold pl-3 border-l-2 border-[#C8A45A]' : 'text-[#1E1B18]/85 hover:text-[#C8A45A]'
+                  isActive(link.path)
+                    ? 'text-[#C8A45A] font-bold pl-3 border-l-2 border-[#C8A45A]'
+                    : 'text-white/90 hover:text-[#C8A45A]'
                 }`}
               >
                 {link.name}
               </Link>
             ))}
 
-            <div className="pt-4 border-t border-[#E9E2D8]">
+            <div className="pt-4 border-t border-white/10">
               <button
                 onClick={() => { setIsBookingModalOpen(true); setMobileMenuOpen(false); }}
-                className="w-full py-3.5 rounded-full bg-[#B88A44] hover:bg-[#a07739] text-white text-center font-poppins font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-2"
+                className="w-full py-3.5 rounded-full bg-[#C8A45A] hover:bg-[#B88A44] text-white text-center font-poppins font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-2"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Book Your Stay</span>
