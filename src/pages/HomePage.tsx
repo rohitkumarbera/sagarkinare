@@ -12,8 +12,7 @@ export const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-cream text-espresso overflow-x-hidden">
       
-      {/* CINEMATIC HERO SECTION WITH AUTOPLAY BACKGROUND VIDEO */}
-      {/* Responsive: 100vh Desktop (h-screen), 80vh Tablet (md:h-[80vh]), 75vh Mobile (h-[75vh]) */}
+      {/* CINEMATIC HERO SECTION WITH AUTOPLAY OFFICIAL RESORT VIDEO (D:\video slider\Slider Video.mp4) */}
       <section className="relative h-[75vh] md:h-[80vh] lg:h-screen min-h-[580px] flex items-center justify-center overflow-hidden">
         
         {/* Background Video with Poster & Image Fallback */}
@@ -27,8 +26,9 @@ export const HomePage: React.FC = () => {
             poster={ORIGINAL_IMAGES.heroBannerJpg || ORIGINAL_IMAGES.heroBanner}
             className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
           >
+            <source src="./videos/slider_video.mp4" type="video/mp4" />
             <source src="./videos/hero_resort_bg.mp4" type="video/mp4" />
-            <source src="./images/original/hero_resort_bg.mp4" type="video/mp4" />
+            <source src="./videos/Slider%20Video.mp4" type="video/mp4" />
             {/* Fallback image if browser blocks autoplay or video fails */}
             <img
               src={ORIGINAL_IMAGES.heroBannerJpg || ORIGINAL_IMAGES.heroBanner}
@@ -37,7 +37,7 @@ export const HomePage: React.FC = () => {
             />
           </video>
 
-          {/* Cinematic Dark Gradient Overlay (Exact User Spec) */}
+          {/* Cinematic Dark Gradient Overlay */}
           <div 
             className="absolute inset-0 z-10 pointer-events-none"
             style={{
