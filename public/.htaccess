@@ -1,0 +1,13 @@
+# Redirect wp-admin and wp-login.php to main working WordPress Login
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /clientwebsite/sagarkinaretajpur/
+  
+  RewriteRule ^wp-admin/?$ https://rohitbera.com/wp-admin/ [R=301,L]
+  RewriteRule ^wp-login\.php$ https://rohitbera.com/wp-login.php [R=301,L]
+
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /clientwebsite/sagarkinaretajpur/index.html [L]
+</IfModule>
