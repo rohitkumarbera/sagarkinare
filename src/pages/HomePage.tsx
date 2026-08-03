@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Trees, Utensils, Calendar, Award, Star, Compass, ChevronRight, CheckCircle2, PhoneCall } from 'lucide-react';
+import { ShieldCheck, Trees, Utensils, Calendar, Award, Star, ChevronRight, CheckCircle2, PhoneCall } from 'lucide-react';
 import { ROOMS, AMENITIES, REVIEWS, ATTRACTIONS, MENU_ITEMS, GALLERY_ITEMS, HOTEL_INFO, ORIGINAL_IMAGES } from '../data/resortData';
 import { RoomCard } from '../components/RoomCard';
 
@@ -49,16 +49,6 @@ export const HomePage: React.FC = () => {
         {/* Hero Content */}
         <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white pt-16">
           
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-4.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-gold/50 text-gold-light text-xs font-poppins font-bold tracking-widest uppercase mb-6 shadow-md"
-          >
-            <Compass className="w-4 h-4 text-gold-light" />
-            <span>Tajpur's Premier 5-Star Beach Sanctuary</span>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
