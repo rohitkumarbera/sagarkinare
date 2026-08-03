@@ -12,32 +12,42 @@ export const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-cream text-espresso overflow-x-hidden">
       
-      {/* HERO SECTION - ELEGANT WARM IVORY TYPOGRAPHY LEELA STYLE */}
-      <section className="relative h-screen min-h-[680px] flex items-center justify-center overflow-hidden">
+      {/* CINEMATIC HERO SECTION WITH AUTOPLAY BACKGROUND VIDEO */}
+      {/* Responsive: 100vh Desktop (h-screen), 80vh Tablet (md:h-[80vh]), 75vh Mobile (h-[75vh]) */}
+      <section className="relative h-[75vh] md:h-[80vh] lg:h-screen min-h-[580px] flex items-center justify-center overflow-hidden">
         
-        {/* Fullscreen Hero Background Image */}
+        {/* Background Video with Poster & Image Fallback */}
         <div className="absolute inset-0 z-0">
-          <picture className="w-full h-full block">
-            <source srcSet={ORIGINAL_IMAGES.heroBanner} type="image/webp" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            controls={false}
+            poster={ORIGINAL_IMAGES.heroBannerJpg || ORIGINAL_IMAGES.heroBanner}
+            className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
+          >
+            <source src="./videos/hero_resort_bg.mp4" type="video/mp4" />
+            <source src="./images/original/hero_resort_bg.mp4" type="video/mp4" />
+            {/* Fallback image if browser blocks autoplay or video fails */}
             <img
               src={ORIGINAL_IMAGES.heroBannerJpg || ORIGINAL_IMAGES.heroBanner}
-              alt="Tajpur Sagar Kinare Luxury Beach Resort Hero"
-              className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
-              style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}
+              alt="Tajpur Sagar Kinare Luxury Beach Resort Hero Poster"
+              className="w-full h-full object-cover object-center"
             />
-          </picture>
+          </video>
 
-          {/* Premium Dark Gradient Overlay */}
+          {/* Cinematic Dark Gradient Overlay (Exact User Spec) */}
           <div 
             className="absolute inset-0 z-10 pointer-events-none"
             style={{
-              background: 'linear-gradient(180deg, rgba(15,15,15,0.55) 0%, rgba(15,15,15,0.35) 45%, rgba(15,15,15,0.55) 100%)'
+              background: 'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0.45) 100%)'
             }}
           />
         </div>
 
-        {/* Hero Content with Clean Warm Ivory (#F8F6F2) Typography */}
-        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white pt-20">
+        {/* Hero Content */}
+        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white pt-16">
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -53,14 +63,14 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-[-0.02em] text-[#F8F6F2] leading-[1.05]"
+            className="font-serif text-3xl sm:text-5xl md:text-7xl font-bold tracking-[-0.02em] text-[#F8F6F2] leading-[1.05]"
             style={{
               textShadow: '0 2px 10px rgba(0,0,0,0.35)'
             }}
           >
             Experience Coastal <br />
             Luxury Beside <br />
-            <span className="text-4xl sm:text-6xl md:text-[1.12em] font-bold text-[#F8F6F2]">
+            <span className="text-3xl sm:text-5xl md:text-[1.12em] font-bold text-[#F8F6F2]">
               Tajpur Beach
             </span>
           </motion.h1>
@@ -69,7 +79,7 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-6 text-base sm:text-lg text-white/95 font-sans max-w-2xl mx-auto font-normal leading-relaxed"
+            className="mt-5 text-sm sm:text-base md:text-lg text-white/95 font-sans max-w-2xl mx-auto font-normal leading-relaxed"
             style={{
               textShadow: '0 2px 8px rgba(0,0,0,0.35)'
             }}
@@ -81,7 +91,7 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link
               to="/booking"
@@ -105,7 +115,7 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="mt-12 inline-flex flex-wrap items-center justify-center gap-6 text-xs text-gold-light font-poppins font-bold"
+            className="mt-10 sm:mt-12 inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-[11px] sm:text-xs text-gold-light font-poppins font-bold"
             style={{ textShadow: '0 2px 6px rgba(0,0,0,0.6)' }}
           >
             <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-gold-light" /> 100% Sweet Water Bath</span>
