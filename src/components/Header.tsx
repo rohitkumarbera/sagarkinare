@@ -118,7 +118,7 @@ export const Header: React.FC = () => {
               : 'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.20) 60%, rgba(0,0,0,0) 100%)'
           }}
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[90px] flex items-center justify-between">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[90px] flex items-center justify-between gap-4">
             
             {/* LEFT: UNCROPPED OFFICIAL SAGAR KINARE LOGO */}
             <div className="flex-shrink-0 flex items-center">
@@ -126,18 +126,18 @@ export const Header: React.FC = () => {
                 <img
                   src={ORIGINAL_IMAGES.logo}
                   alt="Sagar Hotel & Resort, Tajpur Logo"
-                  className="w-[160px] md:w-[200px] lg:w-[240px] h-auto max-h-[60px] object-contain transition-transform duration-300 hover:scale-[1.02] drop-shadow-md"
+                  className="w-[150px] sm:w-[180px] md:w-[200px] lg:w-[220px] h-auto max-h-[58px] object-contain transition-transform duration-300 hover:scale-[1.02] drop-shadow-md"
                 />
               </Link>
             </div>
 
-            {/* CENTER: PERFECTLY CENTERED NAVIGATION MENU (Gap: 32px, Text: #FFFFFF, Hover: #C8A45A) */}
-            <nav className="hidden lg:flex items-center justify-center gap-[32px] flex-grow px-6">
+            {/* CENTER: PERFECTLY CENTERED NAVIGATION MENU (Gap: 24-28px, Text: #FFFFFF, Hover: #C8A45A) */}
+            <nav className="hidden lg:flex items-center justify-center gap-6 xl:gap-8 flex-grow px-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`font-poppins text-xs font-semibold tracking-wider uppercase transition-all duration-300 relative py-1.5 whitespace-nowrap drop-shadow-sm ${
+                  className={`font-poppins text-[11px] xl:text-xs font-semibold tracking-wider uppercase transition-all duration-300 relative py-1.5 whitespace-nowrap drop-shadow-sm ${
                     isActive(link.path)
                       ? 'text-[#C8A45A] font-bold'
                       : 'text-white hover:text-[#C8A45A]'
@@ -152,21 +152,21 @@ export const Header: React.FC = () => {
               ))}
             </nav>
 
-            {/* RIGHT: LUXURY GOLD BOOK BUTTON (BG: #C8A45A, Hover: #B88A44, Text: White) */}
+            {/* RIGHT: LUXURY GOLD "BOOK NOW" BUTTON (Fully Visible, No Clipping) */}
             <div className="hidden sm:flex items-center flex-shrink-0">
               <button
                 onClick={() => setIsBookingModalOpen(true)}
-                className="px-7 py-3 rounded-full bg-[#C8A45A] hover:bg-[#B88A44] text-white font-poppins font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-goldGlow hover:scale-[1.03] active:scale-95 transition-all duration-300 flex items-center gap-2"
+                className="px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-[#C8A45A] hover:bg-[#B88A44] text-white font-poppins font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-goldGlow hover:scale-[1.03] active:scale-95 transition-all duration-300 flex items-center gap-2 whitespace-nowrap"
               >
-                <Calendar className="w-4 h-4" />
-                <span>Book Your Stay</span>
+                <Calendar className="w-4 h-4 flex-shrink-0" />
+                <span>Book Now</span>
               </button>
             </div>
 
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden text-white p-2 hover:text-[#C8A45A] transition-colors duration-300"
+              className="lg:hidden text-white p-2 hover:text-[#C8A45A] transition-colors duration-300 flex-shrink-0"
               aria-label="Toggle Navigation"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -198,7 +198,7 @@ export const Header: React.FC = () => {
                 className="w-full py-3.5 rounded-full bg-[#C8A45A] hover:bg-[#B88A44] text-white text-center font-poppins font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-2"
               >
                 <Calendar className="w-4 h-4" />
-                <span>Book Your Stay</span>
+                <span>Book Now</span>
               </button>
             </div>
           </div>
