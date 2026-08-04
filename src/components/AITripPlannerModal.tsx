@@ -76,16 +76,16 @@ export const AITripPlannerModal: React.FC<AITripPlannerModalProps> = ({ isOpen, 
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-ocean-dark/80 backdrop-blur-md">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1E1B18]/80 backdrop-blur-md">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.95 }}
-          className="bg-cream border border-gold/40 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto text-charcoal"
+          className="bg-cream border border-gold/40 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto text-[#1E1B18]"
         >
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 text-charcoal/60 hover:text-charcoal p-2 rounded-full hover:bg-gold/10 transition-all"
+            className="absolute top-6 right-6 text-[#1E1B18]/60 hover:text-[#1E1B18] p-2 rounded-full hover:bg-gold/10 transition-all"
           >
             <X className="w-5 h-5" />
           </button>
@@ -95,15 +95,15 @@ export const AITripPlannerModal: React.FC<AITripPlannerModalProps> = ({ isOpen, 
             <span>AI Concierge Intelligence</span>
           </div>
 
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-ocean">Custom Tajpur AI Itinerary Planner</h3>
-          <p className="text-xs text-charcoal/70 mt-1 font-sans">
+          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#1E1B18]">Custom Tajpur AI Itinerary Planner</h3>
+          <p className="text-xs text-[#1E1B18]/70 mt-1 font-sans">
             Curate your dream coastal vacation with personalized timings, seafood recommendations, and red crab beach trails.
           </p>
 
           {!generatedItinerary ? (
             <div className="space-y-6 mt-6">
               <div>
-                <label className="block text-xs font-poppins font-bold uppercase text-ocean mb-2">Select Duration</label>
+                <label className="block text-xs font-poppins font-bold uppercase text-[#1E1B18] mb-2">Select Duration</label>
                 <div className="grid grid-cols-3 gap-3">
                   {(['2 Days', '3 Days', '4 Days'] as const).map((d) => (
                     <button
@@ -111,8 +111,8 @@ export const AITripPlannerModal: React.FC<AITripPlannerModalProps> = ({ isOpen, 
                       onClick={() => setDuration(d)}
                       className={`py-3 rounded-2xl border text-xs font-poppins font-semibold transition-all ${
                         duration === d
-                          ? 'bg-ocean text-gold border-gold shadow-goldGlow'
-                          : 'bg-white text-charcoal border-gold/20 hover:border-gold/50'
+                          ? 'bg-[#1E1B18] text-gold border-gold shadow-goldGlow'
+                          : 'bg-white text-[#1E1B18] border-gold/20 hover:border-gold/50'
                       }`}
                     >
                       {d}
@@ -122,7 +122,7 @@ export const AITripPlannerModal: React.FC<AITripPlannerModalProps> = ({ isOpen, 
               </div>
 
               <div>
-                <label className="block text-xs font-poppins font-bold uppercase text-ocean mb-2">Select Vacation Vibe</label>
+                <label className="block text-xs font-poppins font-bold uppercase text-[#1E1B18] mb-2">Select Vacation Vibe</label>
                 <div className="grid grid-cols-2 gap-3">
                   {(['Romantic Escape', 'Family Relaxation', 'Seafood & Adventure', 'Wellness Retreat'] as const).map((v) => (
                     <button
@@ -130,8 +130,8 @@ export const AITripPlannerModal: React.FC<AITripPlannerModalProps> = ({ isOpen, 
                       onClick={() => setVibe(v)}
                       className={`p-3 rounded-2xl border text-xs font-poppins font-semibold text-left transition-all ${
                         vibe === v
-                          ? 'bg-ocean text-gold border-gold shadow-goldGlow'
-                          : 'bg-white text-charcoal border-gold/20 hover:border-gold/50'
+                          ? 'bg-[#1E1B18] text-gold border-gold shadow-goldGlow'
+                          : 'bg-white text-[#1E1B18] border-gold/20 hover:border-gold/50'
                       }`}
                     >
                       {v}
@@ -143,7 +143,7 @@ export const AITripPlannerModal: React.FC<AITripPlannerModalProps> = ({ isOpen, 
               <button
                 onClick={handleGenerate}
                 disabled={isGenerating}
-                className="w-full py-4 rounded-full bg-gradient-to-r from-gold via-gold-shimmer to-gold-dark text-ocean-dark font-poppins font-bold text-xs uppercase tracking-wider shadow-goldGlow hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2"
+                className="w-full py-4 rounded-full bg-gradient-to-r from-gold via-gold-shimmer to-gold-dark text-[#1E1B18]-dark font-poppins font-bold text-xs uppercase tracking-wider shadow-goldGlow hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2"
               >
                 {isGenerating ? (
                   <span>Generating AI Itinerary...</span>
@@ -157,14 +157,14 @@ export const AITripPlannerModal: React.FC<AITripPlannerModalProps> = ({ isOpen, 
             </div>
           ) : (
             <div className="space-y-6 mt-6">
-              <div className="p-4 rounded-2xl bg-ocean/10 border border-gold/30 flex items-center justify-between">
+              <div className="p-4 rounded-2xl bg-[#1E1B18]/10 border border-gold/30 flex items-center justify-between">
                 <div>
-                  <span className="text-[10px] font-poppins uppercase text-gold-dark font-bold">Selected Plan</span>
-                  <h4 className="font-serif font-bold text-ocean text-base">{duration} • {vibe}</h4>
+                  <span className="text-[10px] font-poppins uppercase text-[#966E30] font-bold">Selected Plan</span>
+                  <h4 className="font-serif font-bold text-[#1E1B18] text-base">{duration} • {vibe}</h4>
                 </div>
                 <button
                   onClick={() => setGeneratedItinerary(null)}
-                  className="text-xs text-ocean underline font-poppins font-semibold hover:text-gold-dark"
+                  className="text-xs text-[#1E1B18] underline font-poppins font-semibold hover:text-[#966E30]"
                 >
                   Change Vibe
                 </button>
@@ -173,16 +173,16 @@ export const AITripPlannerModal: React.FC<AITripPlannerModalProps> = ({ isOpen, 
               <div className="space-y-4">
                 {generatedItinerary.map((dItem, idx) => (
                   <div key={idx} className="p-4 rounded-2xl bg-white border border-gold/20 space-y-3 shadow-sm">
-                    <h4 className="font-serif font-bold text-ocean text-sm border-b border-gold/20 pb-2">{dItem.day}</h4>
+                    <h4 className="font-serif font-bold text-[#1E1B18] text-sm border-b border-gold/20 pb-2">{dItem.day}</h4>
                     <div className="space-y-2">
                       {dItem.schedule.map((sItem: any, sIdx: number) => (
                         <div key={sIdx} className="flex items-start gap-3 text-xs">
-                          <span className="px-2 py-0.5 rounded bg-gold/10 text-gold-dark font-poppins font-bold min-w-[70px] text-center">
+                          <span className="px-2 py-0.5 rounded bg-gold/10 text-[#966E30] font-poppins font-bold min-w-[70px] text-center">
                             {sItem.time}
                           </span>
                           <div>
-                            <h5 className="font-semibold text-ocean">{sItem.title}</h5>
-                            <p className="text-charcoal/70 font-sans mt-0.5">{sItem.desc}</p>
+                            <h5 className="font-semibold text-[#1E1B18]">{sItem.title}</h5>
+                            <p className="text-[#1E1B18]/70 font-sans mt-0.5">{sItem.desc}</p>
                           </div>
                         </div>
                       ))}
@@ -195,7 +195,7 @@ export const AITripPlannerModal: React.FC<AITripPlannerModalProps> = ({ isOpen, 
                 <Link
                   to="/booking"
                   onClick={onClose}
-                  className="flex-1 py-3.5 rounded-full bg-ocean text-gold text-center font-poppins font-bold text-xs uppercase tracking-wider hover:bg-ocean-dark transition-all flex items-center justify-center gap-1.5"
+                  className="flex-1 py-3.5 rounded-full bg-[#1E1B18] text-gold text-center font-poppins font-bold text-xs uppercase tracking-wider hover:bg-[#1E1B18] transition-all flex items-center justify-center gap-1.5"
                 >
                   <span>Book Stay For This Trip</span>
                   <ChevronRight className="w-4 h-4" />

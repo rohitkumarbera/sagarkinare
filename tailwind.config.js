@@ -21,6 +21,17 @@ export default {
         espresso: '#1E1B18',
         taupe: '#5F5A54',
         linen: '#E9E2D8',
+        // Support legacy/alias colors
+        ocean: {
+          DEFAULT: '#1E1B18',
+          dark: '#141210',
+        },
+        sand: {
+          DEFAULT: '#F8F5F0',
+          light: '#F8F5F0',
+          dark: '#EFEAE2',
+        },
+        charcoal: '#1E1B18',
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'Georgia', 'serif'],

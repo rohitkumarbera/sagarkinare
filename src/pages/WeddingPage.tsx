@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 export const WeddingPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-sand-light pt-24 pb-20 text-charcoal">
+    <div className="min-h-screen bg-[#F8F5F0] pt-24 pb-20 text-[#1E1B18]">
       
       {/* UNIQUE HERO BANNER */}
-      <section className="relative py-20 bg-ocean-dark text-sand overflow-hidden border-b-2 border-gold/30">
+      <section className="relative py-20 bg-[#1E1B18] text-[#F8F5F0] overflow-hidden border-b-2 border-gold/30">
         <div className="absolute inset-0 opacity-30">
           <img
             src={ORIGINAL_IMAGES.propertyOverview}
@@ -21,7 +21,7 @@ export const WeddingPage: React.FC = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
           <span className="text-gold text-xs font-poppins uppercase tracking-widest font-semibold block">Coastal Romance</span>
           <h1 className="font-serif font-extrabold tracking-wide text-white text-4xl sm:text-6xl font-bold text-white" style={{ textShadow: "0 3px 12px rgba(0,0,0,0.85), 0 2px 4px rgba(0,0,0,0.9)" }}>Destination Beach Weddings</h1>
-          <p className="text-sand/80 text-xs sm:text-sm max-w-xl mx-auto font-sans font-light">
+          <p className="text-[#F8F5F0]/80 text-xs sm:text-sm max-w-xl mx-auto font-sans font-light">
             Say your vows with the sea breeze softly rustling through whispering casuarina pine trees.
           </p>
         </div>
@@ -30,13 +30,13 @@ export const WeddingPage: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <span className="text-gold-dark text-xs font-poppins uppercase tracking-widest font-semibold block">Intimate Coastal Ceremonies</span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-ocean">Your Dream Wedding at Sagar Kinare</h2>
-            <p className="text-sm text-charcoal/80 leading-relaxed font-sans">
+            <span className="text-[#966E30] text-xs font-poppins uppercase tracking-widest font-semibold block">Intimate Coastal Ceremonies</span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#1E1B18]">Your Dream Wedding at Sagar Kinare</h2>
+            <p className="text-sm text-[#1E1B18]/80 leading-relaxed font-sans">
               From floral mandap setups under the palm canopy to gourmet Bengali wedding feasts and luxurious guest suite accommodations, our resort offers complete destination wedding planning.
             </p>
 
-            <ul className="space-y-2.5 text-xs text-charcoal/80 font-poppins">
+            <ul className="space-y-2.5 text-xs text-[#1E1B18]/80 font-poppins">
               <li className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-gold flex-shrink-0" />
                 <span>Beachfront & Lawn Mandap Floral Decorations</span>
@@ -58,7 +58,7 @@ export const WeddingPage: React.FC = () => {
             <div className="pt-2">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-ocean text-gold font-poppins font-bold text-xs uppercase tracking-wider hover:bg-ocean-dark transition-all"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#1E1B18] text-gold font-poppins font-bold text-xs uppercase tracking-wider hover:bg-[#1E1B18] transition-all"
               >
                 <span>Request Wedding Brochure</span>
               </Link>

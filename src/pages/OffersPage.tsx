@@ -45,7 +45,7 @@ export const OffersPage: React.FC = () => {
           {OFFERS.map((offer) => (
             <div key={offer.id} className="p-8 rounded-3xl bg-white border border-linen shadow-luxury space-y-6 flex flex-col justify-between hover:border-gold transition-all">
               <div className="space-y-3">
-                <span className="px-3.5 py-1 rounded-full bg-gold/15 text-gold-dark font-poppins font-bold text-xs uppercase tracking-wider inline-block">
+                <span className="px-3.5 py-1 rounded-full bg-gold/15 text-[#966E30] font-poppins font-bold text-xs uppercase tracking-wider inline-block">
                   Code: {offer.code}
                 </span>
                 <h3 className="font-serif font-bold text-2xl text-espresso">{offer.title}</h3>

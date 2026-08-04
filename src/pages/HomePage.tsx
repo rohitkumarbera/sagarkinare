@@ -122,7 +122,7 @@ export const HomePage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/10 text-gold-dark text-xs font-poppins font-bold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold/10 text-[#966E30] text-xs font-poppins font-bold uppercase tracking-widest">
               <Award className="w-4 h-4 text-gold" />
               <span>Welcome to Sagar Kinare</span>
             </div>

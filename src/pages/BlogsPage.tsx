@@ -55,7 +55,7 @@ export const BlogsPage: React.FC = () => {
               </div>
 
               <div className="p-6 pt-0">
-                <button className="text-xs font-poppins font-bold text-gold uppercase tracking-wider flex items-center gap-1.5 hover:text-gold-dark">
+                <button className="text-xs font-poppins font-bold text-gold uppercase tracking-wider flex items-center gap-1.5 hover:text-[#966E30]">
                   <span>Read Article</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>

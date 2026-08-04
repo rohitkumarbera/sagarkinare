@@ -18,14 +18,14 @@ export const FAQPage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-sand-light pt-24 pb-20 text-charcoal">
+    <div className="min-h-screen bg-[#F8F5F0] pt-24 pb-20 text-[#1E1B18]">
       
       {/* UNIQUE HERO BANNER */}
-      <section className="relative py-20 bg-ocean-dark text-sand overflow-hidden border-b-2 border-gold/30">
+      <section className="relative py-20 bg-[#1E1B18] text-[#F8F5F0] overflow-hidden border-b-2 border-gold/30">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <span className="text-gold text-xs font-poppins uppercase tracking-widest font-semibold block">Guest Assistance</span>
           <h1 className="font-serif font-extrabold tracking-wide text-white text-4xl sm:text-6xl font-bold text-white" style={{ textShadow: "0 3px 12px rgba(0,0,0,0.85), 0 2px 4px rgba(0,0,0,0.9)" }}>Frequently Asked Questions</h1>
-          <p className="text-sand/80 text-xs sm:text-sm max-w-xl mx-auto font-sans font-light">
+          <p className="text-[#F8F5F0]/80 text-xs sm:text-sm max-w-xl mx-auto font-sans font-light">
             Everything you need to know about stay tariffs, sweet water guarantees, check-in policies, and beach access.
           </p>
 
@@ -36,9 +36,9 @@ export const FAQPage: React.FC = () => {
               placeholder="Search questions (e.g. sweet water, check-in, food)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white/90 text-charcoal placeholder-charcoal/50 rounded-full px-5 py-3 text-xs font-poppins pl-11 focus:outline-none focus:ring-2 focus:ring-gold"
+              className="w-full bg-white/90 text-[#1E1B18] placeholder-charcoal/50 rounded-full px-5 py-3 text-xs font-poppins pl-11 focus:outline-none focus:ring-2 focus:ring-gold"
             />
-            <Search className="w-4 h-4 text-charcoal/60 absolute left-4 top-7" />
+            <Search className="w-4 h-4 text-[#1E1B18]/60 absolute left-4 top-7" />
           </div>
         </div>
       </section>
@@ -54,8 +54,8 @@ export const FAQPage: React.FC = () => {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-2 rounded-full text-xs font-poppins font-semibold uppercase tracking-wider transition-all ${
                 selectedCategory === cat
-                  ? 'bg-ocean text-gold shadow-gold-glow border border-gold/40'
-                  : 'bg-white text-charcoal hover:bg-sand-dark border border-gold/20'
+                  ? 'bg-[#1E1B18] text-gold shadow-gold-glow border border-gold/40'
+                  : 'bg-white text-[#1E1B18] hover:bg-[#EFEAE2] border border-gold/20'
               }`}
             >
               {cat}
@@ -72,16 +72,16 @@ export const FAQPage: React.FC = () => {
             >
               <button
                 onClick={() => setOpenFaq(openFaq === faq.id ? null : faq.id)}
-                className="w-full p-5 text-left flex items-center justify-between gap-4 font-serif font-bold text-ocean text-base hover:text-gold-dark"
+                className="w-full p-5 text-left flex items-center justify-between gap-4 font-serif font-bold text-[#1E1B18] text-base hover:text-[#966E30]"
               >
                 <span>{faq.question}</span>
                 <ChevronDown className={`w-5 h-5 text-gold flex-shrink-0 transition-transform duration-300 ${openFaq === faq.id ? 'rotate-180' : ''}`} />
               </button>
 
               {openFaq === faq.id && (
-                <div className="px-5 pb-5 text-xs text-charcoal/80 font-sans leading-relaxed border-t border-sand-dark pt-3">
+                <div className="px-5 pb-5 text-xs text-[#1E1B18]/80 font-sans leading-relaxed border-t border-[#E9E2D8] pt-3">
                   <p>{faq.answer}</p>
-                  <span className="inline-block mt-3 text-[10px] font-poppins font-bold text-gold uppercase px-2 py-0.5 rounded bg-ocean">
+                  <span className="inline-block mt-3 text-[10px] font-poppins font-bold text-gold uppercase px-2 py-0.5 rounded bg-[#1E1B18]">
                     Category: {faq.category}
                   </span>
                 </div>
@@ -91,16 +91,16 @@ export const FAQPage: React.FC = () => {
         </div>
 
         {/* STILL HAVE QUESTIONS CTA */}
-        <div className="mt-16 p-8 rounded-3xl bg-ocean text-sand border-2 border-gold/30 text-center space-y-4">
+        <div className="mt-16 p-8 rounded-3xl bg-[#1E1B18] text-[#F8F5F0] border-2 border-gold/30 text-center space-y-4">
           <HelpCircle className="w-10 h-10 text-gold mx-auto" />
           <h3 className="font-serif font-bold text-2xl text-white">Have Additional Questions?</h3>
-          <p className="text-xs text-sand/80 max-w-md mx-auto font-sans">
+          <p className="text-xs text-[#F8F5F0]/80 max-w-md mx-auto font-sans">
             Our 24/7 Front Desk concierge is available to answer any specific query regarding your upcoming stay.
           </p>
           <div className="pt-2 flex justify-center gap-4">
             <Link
               to="/contact"
-              className="px-6 py-3 rounded-full bg-gold text-ocean-dark font-poppins font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all"
+              className="px-6 py-3 rounded-full bg-gold text-[#1E1B18]-dark font-poppins font-bold text-xs uppercase tracking-wider hover:brightness-110 transition-all"
             >
               Contact Concierge
             </Link>

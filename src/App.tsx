@@ -29,7 +29,7 @@ export const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-sand-light selection:bg-gold selection:text-ocean-dark">
+      <div className="flex flex-col min-h-screen bg-[#F8F5F0] selection:bg-gold selection:text-[#1E1B18]-dark">
         <Header />
         
         <main className="flex-grow">
