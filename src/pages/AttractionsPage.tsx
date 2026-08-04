@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { ATTRACTIONS, ORIGINAL_IMAGES } from '../data/resortData';
 import { Navigation, CheckCircle2 } from 'lucide-react';
@@ -12,17 +13,15 @@ export const AttractionsPage: React.FC = () => {
       {/* UNIQUE HERO BANNER */}
       <section className="relative min-h-[420px] sm:min-h-[480px] flex items-center justify-center pt-[140px] sm:pt-[160px] pb-16 sm:pb-20 bg-[#1E1B18] text-[#F8F5F0] overflow-hidden border-b-2 border-[#B88A44]/30">
         <div className="absolute inset-0 opacity-30">
-          <img
-            src={ORIGINAL_IMAGES.propertyOverview}
-            alt="Nearby Attractions"
-            className="w-full h-full object-cover"
+          <motion.img initial={{ scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }} src={ORIGINAL_IMAGES.propertyOverview} alt="Nearby Attractions"
+             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 z-10 pointer-events-none" style={{ background: 'linear-gradient(180deg, rgba(15,15,15,0.75) 0%, rgba(15,15,15,0.60) 50%, rgba(15,15,15,0.75) 100%)' }} />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-[#B88A44] text-xs font-poppins uppercase tracking-widest font-semibold block mb-2">Coastal Exploration</span>
-          <h1 className="font-serif font-extrabold tracking-wide text-white text-4xl sm:text-6xl font-bold" style={{ textShadow: "0 3px 12px rgba(0,0,0,0.85), 0 2px 4px rgba(0,0,0,0.9)" }}>Tajpur & Coastal Sightseeing</h1>
+          <motion.h1 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }} className="font-serif font-extrabold tracking-wide text-white text-4xl sm:text-6xl font-bold" style={{ textShadow: "0 3px 12px rgba(0,0,0,0.85), 0 2px 4px rgba(0,0,0,0.9)" }}>Tajpur & Coastal Sightseeing</h1>
           <p className="text-[#F8F5F0]/80 text-xs sm:text-sm max-w-xl mx-auto mt-3 font-sans font-light">
             Discover crimson red crab beaches, high-thrill water sports in Mandarmani, colorful trawler harbors in Shankarpur, and Digha sea promenades.
           </p>

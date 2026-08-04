@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { ROOMS } from '../data/resortData';
@@ -67,8 +68,8 @@ export const BookingPage: React.FC = () => {
       {/* HERO BANNER */}
       <section className="relative py-16 bg-[#1E1B18] text-[#F8F5F0] overflow-hidden border-b-2 border-gold/30">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-gold text-xs font-poppins uppercase tracking-widest font-semibold block mb-2">Direct Reservation Engine</span>
-          <h1 className="font-serif font-extrabold tracking-wide text-white text-4xl sm:text-5xl font-bold text-white" style={{ textShadow: "0 3px 12px rgba(0,0,0,0.85), 0 2px 4px rgba(0,0,0,0.9)" }}>Book Your Luxury Stay</h1>
+          <motion.span initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0 }} className="text-gold text-xs font-poppins uppercase tracking-widest font-semibold block mb-2">Direct Reservation Engine</span>
+          <motion.h1 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }} className="font-serif font-extrabold tracking-wide text-white text-4xl sm:text-5xl font-bold text-white" style={{ textShadow: "0 3px 12px rgba(0,0,0,0.85), 0 2px 4px rgba(0,0,0,0.9)" }}>Book Your Luxury Stay</h1>
           <p className="text-[#F8F5F0]/80 text-xs sm:text-sm max-w-xl mx-auto mt-2 font-poppins">
             Instant confirmation • Zero booking fees • 100% Sweet Water Guarantee
           </p>
