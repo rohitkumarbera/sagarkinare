@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ShieldCheck, Trees, Utensils, Calendar, Award, Star, ChevronRight, CheckCircle2, PhoneCall } from 'lucide-react';
 import { ROOMS, AMENITIES, REVIEWS, ATTRACTIONS, MENU_ITEMS, GALLERY_ITEMS, HOTEL_INFO, ORIGINAL_IMAGES } from '../data/resortData';
 import { RoomCard } from '../components/RoomCard';
+import { LuxuryBookingModal } from '../components/LuxuryBookingModal';
 
 export const HomePage: React.FC = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
   const featuredRooms = ROOMS.filter(r => r.featured);
   const homeGallery = GALLERY_ITEMS.slice(0, 6);
 
@@ -83,13 +85,13 @@ export const HomePage: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
           >
-            <Link
-              to="/booking"
+            <button
+              onClick={() => setIsBookingModalOpen(true)}
               className="w-full sm:w-auto px-9 py-4 rounded-full bg-gold text-white font-poppins font-bold text-xs uppercase tracking-wider shadow-goldGlow hover:bg-gold-dark hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
             >
               <Calendar className="w-4 h-4" />
               <span>Book Your Stay</span>
-            </Link>
+            </button>
 
             <Link
               to="/rooms"
@@ -496,13 +498,13 @@ export const HomePage: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Link
-              to="/booking"
+            <button
+              onClick={() => setIsBookingModalOpen(true)}
               className="w-full sm:w-auto px-10 py-4 rounded-full bg-gold text-white font-poppins font-bold text-sm uppercase tracking-wider shadow-goldGlow hover:bg-gold-dark transition-all flex items-center justify-center gap-2"
             >
               <Calendar className="w-4 h-4" />
               <span>Book Online Instantly</span>
-            </Link>
+            </button>
 
             <a
               href={`tel:${HOTEL_INFO.phonePrimary}`}
@@ -515,6 +517,9 @@ export const HomePage: React.FC = () => {
 
         </div>
       </section>
+
+      {/* LUXURY RESERVATION ENGINE MODAL */}
+      <LuxuryBookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
 
     </div>
   );

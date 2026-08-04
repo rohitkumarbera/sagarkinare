@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { OFFERS } from '../data/resortData';
 import { Check, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { LuxuryBookingModal } from '../components/LuxuryBookingModal';
 
 export const OffersPage: React.FC = () => {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-cream pt-24 pb-20 text-espresso">
       
@@ -59,17 +61,20 @@ export const OffersPage: React.FC = () => {
                 </div>
               </div>
 
-              <Link
-                to={`/booking?code=${offer.code}`}
+              <button
+                onClick={() => setIsBookingModalOpen(true)}
                 className="w-full py-3.5 rounded-full bg-gold text-white text-center font-poppins font-bold text-xs uppercase tracking-wider shadow-goldGlow hover:bg-gold-dark transition-all flex items-center justify-center gap-2"
               >
                 <span>Apply Offer & Book</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </button>
             </div>
           ))}
         </div>
       </div>
+
+      {/* LUXURY RESERVATION ENGINE MODAL */}
+      <LuxuryBookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
 
     </div>
   );
