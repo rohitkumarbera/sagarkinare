@@ -175,7 +175,7 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`font-poppins text-[11px] xl:text-xs font-semibold tracking-wider uppercase transition-all duration-300 relative py-1.5 whitespace-nowrap drop-shadow-sm ${
+                  className={`font-poppins text-[11px] xl:text-xs font-semibold tracking-wider uppercase transition-all duration-300 relative py-1.5 whitespace-nowrap drop-shadow-sm group ${
                     isActive(link.path)
                       ? 'text-[#C8A45A] font-bold'
                       : 'text-white hover:text-[#C8A45A]'
@@ -183,9 +183,9 @@ export const Header: React.FC = () => {
                   style={{ textShadow: '0 2px 4px rgba(0,0,0,0.4)' }}
                 >
                   {link.name}
-                  {isActive(link.path) && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C8A45A] rounded-full" />
-                  )}
+                  <span className={`absolute bottom-0 left-0 right-0 h-[2px] bg-[#C8A45A] rounded-full transition-transform duration-300 origin-left ${
+                    isActive(link.path) ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                  }`} />
                 </Link>
               ))}
             </nav>

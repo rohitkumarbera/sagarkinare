@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { AIConcierge } from './components/AIConcierge';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { ScrollToTop } from './components/ScrollToTop';
+import { ScrollProgressBar } from './components/ScrollProgressBar';
 
 import { HomePage } from './pages/HomePage';
 import { RoomsPage } from './pages/RoomsPage';
@@ -29,7 +30,8 @@ export const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="flex flex-col min-h-screen bg-[#F8F5F0] selection:bg-gold selection:text-[#1E1B18]-dark">
+      <ScrollProgressBar />
+      <div className="flex flex-col min-h-screen bg-[#F8F5F0]">
         <Header />
         
         <main className="flex-grow">

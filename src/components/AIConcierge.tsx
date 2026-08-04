@@ -13,7 +13,16 @@ interface Message {
 
 export const AIConcierge: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [pulse, setPulse] = useState(false);
   const [language, setLanguage] = useState<'en' | 'bn' | 'hi'>('en');
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPulse(true);
+      setTimeout(() => setPulse(false), 1500);
+    }, 10000);
+    return () => clearInterval(interval);
+  }, []);
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -98,7 +107,9 @@ export const AIConcierge: React.FC = () => {
           onClick={() => setIsOpen(true)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-3 px-5 py-3.5 rounded-full shadow-[0_20_50px_rgba(0,0,0,0.25)] border border-white/15 transition-all duration-300 group"
+          className={`flex items-center gap-3 px-5 py-3.5 rounded-full shadow-[0_20_50px_rgba(0,0,0,0.25)] border border-white/15 transition-all duration-500 group ${
+            pulse ? 'ring-4 ring-gold/40 scale-105 shadow-goldGlow' : ''
+          }`}
           style={{
             backgroundColor: 'rgba(15,23,42,0.92)',
             backdropFilter: 'blur(16px)',

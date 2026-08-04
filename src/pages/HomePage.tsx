@@ -5,6 +5,7 @@ import { ShieldCheck, Trees, Utensils, Calendar, Award, Star, ChevronRight, Chec
 import { ROOMS, AMENITIES, REVIEWS, ATTRACTIONS, MENU_ITEMS, GALLERY_ITEMS, HOTEL_INFO, ORIGINAL_IMAGES } from '../data/resortData';
 import { RoomCard } from '../components/RoomCard';
 import { LuxuryBookingModal } from '../components/LuxuryBookingModal';
+import { AnimatedCounter } from '../components/AnimatedCounter';
 
 export const HomePage: React.FC = () => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -47,26 +48,43 @@ export const HomePage: React.FC = () => {
         {/* Hero Content */}
         <div className="relative z-20 max-w-[900px] w-full mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-serif text-3xl sm:text-5xl md:text-7xl font-bold tracking-[-0.02em] text-[#F8F6F2] leading-[1.02] max-w-[900px] mx-auto mb-8"
-            style={{
-              textShadow: '0 2px 10px rgba(0,0,0,0.35)'
-            }}
+          {/* Line-by-Line Staggered Hero Title */}
+          <h1 
+            className="font-serif text-3xl sm:text-5xl md:text-7xl font-bold tracking-[-0.02em] text-[#F8F6F2] leading-[1.05] max-w-[900px] mx-auto mb-8 overflow-hidden"
+            style={{ textShadow: '0 2px 10px rgba(0,0,0,0.35)' }}
           >
-            Experience Coastal <br />
-            Luxury Beside <br />
-            <span className="text-3xl sm:text-5xl md:text-[1.12em] font-bold text-[#F8F6F2]">
+            <motion.span
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0 }}
+              className="block"
+            >
+              Experience Coastal
+            </motion.span>
+            
+            <motion.span
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+              className="block"
+            >
+              Luxury Beside
+            </motion.span>
+            
+            <motion.span
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
+              className="block text-3xl sm:text-5xl md:text-[1.12em] font-bold text-[#F8F6F2]"
+            >
               Tajpur Beach
-            </span>
-          </motion.h1>
+            </motion.span>
+          </h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.45 }}
             className="text-sm sm:text-base md:text-lg text-white/95 font-sans max-w-2xl mx-auto font-normal leading-relaxed mb-10"
             style={{
               textShadow: '0 2px 8px rgba(0,0,0,0.35)'
@@ -76,14 +94,14 @@ export const HomePage: React.FC = () => {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 25, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
           >
             <button
               onClick={() => setIsBookingModalOpen(true)}
-              className="w-full sm:w-auto px-9 py-4 rounded-full bg-gold text-white font-poppins font-bold text-xs uppercase tracking-wider shadow-goldGlow hover:bg-gold-dark hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-9 py-4 rounded-full bg-gold text-white font-poppins font-bold text-xs uppercase tracking-wider shadow-goldGlow hover:bg-gold-dark hover:-translate-y-1 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2"
             >
               <Calendar className="w-4 h-4" />
               <span>Book Your Stay</span>
@@ -91,7 +109,7 @@ export const HomePage: React.FC = () => {
 
             <Link
               to="/rooms"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-black/40 backdrop-blur-md border border-white/40 text-white hover:bg-white hover:text-espresso font-poppins font-semibold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-black/40 backdrop-blur-md border border-white/40 text-white hover:bg-white hover:text-espresso hover:-translate-y-1 font-poppins font-semibold text-xs uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2"
             >
               <span>Explore Resort Suites</span>
               <ChevronRight className="w-4 h-4" />
@@ -102,7 +120,7 @@ export const HomePage: React.FC = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
+            transition={{ duration: 1, delay: 0.75 }}
             className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-[11px] sm:text-xs text-gold-light font-poppins font-bold"
             style={{ textShadow: '0 2px 6px rgba(0,0,0,0.6)' }}
           >
@@ -138,12 +156,16 @@ export const HomePage: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-linen">
               <div className="p-5 rounded-2xl bg-white border border-linen shadow-luxury">
-                <span className="font-serif text-3xl font-bold text-espresso block">4.8★</span>
+                <span className="font-serif text-3xl font-bold text-espresso block">
+                  <AnimatedCounter end={4.8} decimals={1} suffix="★" />
+                </span>
                 <span className="text-xs text-taupe font-poppins mt-1 block">Google Guest Rating</span>
               </div>
 
               <div className="p-5 rounded-2xl bg-white border border-linen shadow-luxury">
-                <span className="font-serif text-3xl font-bold text-espresso block">300m</span>
+                <span className="font-serif text-3xl font-bold text-espresso block">
+                  <AnimatedCounter end={300} suffix="m" />
+                </span>
                 <span className="text-xs text-taupe font-poppins mt-1 block">Direct Beach Pine Trail</span>
               </div>
             </div>
