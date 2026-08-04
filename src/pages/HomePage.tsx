@@ -13,7 +13,7 @@ export const HomePage: React.FC = () => {
     <div className="min-h-screen bg-cream text-espresso overflow-x-hidden">
       
       {/* CINEMATIC HERO SECTION WITH AUTOPLAY OFFICIAL RESORT VIDEO (D:\video slider\Slider Video.mp4) */}
-      <section className="relative h-[75vh] md:h-[80vh] lg:h-screen min-h-[580px] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[720px] lg:min-h-screen flex flex-col justify-center items-center overflow-hidden pt-[120px] md:pt-[140px] lg:pt-[180px] pb-16 lg:pb-24">
         
         {/* Background Video with Poster & Image Fallback */}
         <div className="absolute inset-0 z-0">
@@ -47,13 +47,13 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white pt-16">
+        <div className="relative z-20 max-w-[900px] w-full mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-serif text-3xl sm:text-5xl md:text-7xl font-bold tracking-[-0.02em] text-[#F8F6F2] leading-[1.05]"
+            className="font-serif text-3xl sm:text-5xl md:text-7xl font-bold tracking-[-0.02em] text-[#F8F6F2] leading-[1.02] max-w-[900px] mx-auto mb-8"
             style={{
               textShadow: '0 2px 10px rgba(0,0,0,0.35)'
             }}
@@ -69,7 +69,7 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="mt-5 text-sm sm:text-base md:text-lg text-white/95 font-sans max-w-2xl mx-auto font-normal leading-relaxed"
+            className="text-sm sm:text-base md:text-lg text-white/95 font-sans max-w-2xl mx-auto font-normal leading-relaxed mb-10"
             style={{
               textShadow: '0 2px 8px rgba(0,0,0,0.35)'
             }}
@@ -81,7 +81,7 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
           >
             <Link
               to="/booking"
@@ -105,7 +105,7 @@ export const HomePage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.8 }}
-            className="mt-10 sm:mt-12 inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-[11px] sm:text-xs text-gold-light font-poppins font-bold"
+            className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-[11px] sm:text-xs text-gold-light font-poppins font-bold"
             style={{ textShadow: '0 2px 6px rgba(0,0,0,0.6)' }}
           >
             <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-gold-light" /> 100% Sweet Water Bath</span>

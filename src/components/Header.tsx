@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
+      <header className="fixed top-0 left-0 right-0 z-[9999] transition-all duration-300">
         
         {/* CLEAN LUXURY TOP INFORMATION BAR (#1F1A17 Background) */}
         <div 
