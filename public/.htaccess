@@ -1,6 +1,8 @@
-AddType video/mp4 .mp4 .MP4
-AddType video/webm .webm
-AddType video/ogg .ogv
+<IfModule mod_mime.c>
+  AddType video/mp4 .mp4 .MP4
+  AddType video/webm .webm
+  AddType video/ogg .ogv
+</IfModule>
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -8,6 +10,10 @@ AddType video/ogg .ogv
   
   RewriteRule ^wp-admin/?$ https://rohitbera.com/wp-admin/ [R=301,L]
   RewriteRule ^wp-login\.php$ https://rohitbera.com/wp-login.php [R=301,L]
+
+  # Direct pass-through for media & video assets
+  RewriteCond %{REQUEST_URI} \.(mp4|mp3|webm|ogv|jpg|jpeg|png|gif|svg|css|js|webp)$ [NC]
+  RewriteRule ^ - [L]
 
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f

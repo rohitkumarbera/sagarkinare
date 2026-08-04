@@ -17,26 +17,22 @@ export const HomePage: React.FC = () => {
       {/* CINEMATIC HERO SECTION WITH AUTOPLAY OFFICIAL RESORT VIDEO (D:\video slider\Slider Video.mp4) */}
       <section className="relative min-h-[720px] lg:min-h-screen flex flex-col justify-center items-center overflow-hidden pt-[120px] md:pt-[140px] lg:pt-[180px] pb-16 lg:pb-24">
         
-        {/* Background Video with Poster & Image Fallback */}
-        <div className="absolute inset-0 z-0">
+        {/* Background Video (D:\video slider\Slider Video.mp4) */}
+        <div className="absolute inset-0 z-0 bg-black">
           <video
             autoPlay
             muted
             loop
             playsInline
+            preload="auto"
             controls={false}
-            poster={ORIGINAL_IMAGES.heroBannerJpg || ORIGINAL_IMAGES.heroBanner}
             className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
           >
             <source src="./videos/slider_video.mp4" type="video/mp4" />
-            <source src="./videos/hero_resort_bg.mp4" type="video/mp4" />
             <source src="./videos/Slider%20Video.mp4" type="video/mp4" />
-            {/* Fallback image if browser blocks autoplay or video fails */}
-            <img
-              src={ORIGINAL_IMAGES.heroBannerJpg || ORIGINAL_IMAGES.heroBanner}
-              alt="Tajpur Sagar Kinare Luxury Beach Resort Hero Poster"
-              className="w-full h-full object-cover object-center"
-            />
+            <source src="./images/original/slider_video.mp4" type="video/mp4" />
+            <source src="videos/slider_video.mp4" type="video/mp4" />
+            <source src="slider_video.mp4" type="video/mp4" />
           </video>
 
           {/* Cinematic Dark Gradient Overlay */}
