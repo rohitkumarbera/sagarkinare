@@ -14,10 +14,10 @@ export const RoomsPage: React.FC = () => {
   });
 
   return (
-    <div className="min-h-screen bg-cream pt-24 pb-20 text-espresso">
+    <div className="min-h-screen bg-cream pt-0 pb-20 text-espresso">
       
       {/* HIGH CONTRAST SUBPAGE HERO BANNER */}
-      <section className="relative py-24 text-white overflow-hidden border-b border-linen">
+      <section className="relative min-h-[420px] sm:min-h-[480px] flex items-center justify-center pt-[140px] sm:pt-[160px] pb-16 sm:pb-20 text-white overflow-hidden border-b border-linen">
         <div className="absolute inset-0 z-0">
           <img
             src={ORIGINAL_IMAGES.deluxeRoom}

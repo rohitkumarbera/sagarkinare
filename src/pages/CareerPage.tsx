@@ -18,10 +18,10 @@ export const CareerPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0] pt-24 pb-20 text-[#1E1B18]">
+    <div className="min-h-screen bg-[#F8F5F0] pt-0 pb-20 text-[#1E1B18]">
       
       {/* UNIQUE HERO BANNER */}
-      <section className="relative py-20 bg-[#1E1B18] text-[#F8F5F0] overflow-hidden border-b-2 border-gold/30">
+      <section className="relative min-h-[420px] sm:min-h-[480px] flex items-center justify-center pt-[140px] sm:pt-[160px] pb-16 sm:pb-20 bg-[#1E1B18] text-[#F8F5F0] overflow-hidden border-b-2 border-gold/30">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
           <span className="text-gold text-xs font-poppins uppercase tracking-widest font-semibold block">Join Our Team</span>
           <h1 className="font-serif font-extrabold tracking-wide text-white text-4xl sm:text-6xl font-bold text-white" style={{ textShadow: "0 3px 12px rgba(0,0,0,0.85), 0 2px 4px rgba(0,0,0,0.9)" }}>Careers at Sagar Kinare</h1>

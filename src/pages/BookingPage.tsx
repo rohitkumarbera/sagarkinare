@@ -62,7 +62,7 @@ export const BookingPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5F0] pt-24 pb-20 text-[#1E1B18]">
+    <div className="min-h-screen bg-[#F8F5F0] pt-0 pb-20 text-[#1E1B18]">
       
       {/* HERO BANNER */}
       <section className="relative py-16 bg-[#1E1B18] text-[#F8F5F0] overflow-hidden border-b-2 border-gold/30">

@@ -7,10 +7,10 @@ export const OffersPage: React.FC = () => {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-cream pt-24 pb-20 text-espresso">
+    <div className="min-h-screen bg-cream pt-0 pb-20 text-espresso">
       
       {/* HERO BANNER WITH DARK OVERLAY */}
-      <section className="relative py-24 text-white overflow-hidden border-b border-linen">
+      <section className="relative min-h-[420px] sm:min-h-[480px] flex items-center justify-center pt-[140px] sm:pt-[160px] pb-16 sm:pb-20 text-white overflow-hidden border-b border-linen">
         <div className="absolute inset-0 z-0">
           <img
             src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1920&q=80"

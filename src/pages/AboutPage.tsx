@@ -3,10 +3,10 @@ import React from 'react';
 
 export const AboutPage: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#F8F5F0] pt-24 pb-20 text-[#1E1B18]">
+    <div className="min-h-screen bg-[#F8F5F0] pt-0 pb-20 text-[#1E1B18]">
       
       {/* UNIQUE HERO BANNER */}
-      <section className="relative py-20 bg-[#1E1B18] text-[#F8F5F0] overflow-hidden border-b-2 border-gold/30">
+      <section className="relative min-h-[420px] sm:min-h-[480px] flex items-center justify-center pt-[140px] sm:pt-[160px] pb-16 sm:pb-20 bg-[#1E1B18] text-[#F8F5F0] overflow-hidden border-b-2 border-gold/30">
         <div className="absolute inset-0 opacity-30">
           <img
             src={ORIGINAL_IMAGES.propertyOverview}
