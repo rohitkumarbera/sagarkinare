@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Droplets, Trees, Utensils, ArrowUp } from 'lucide-react';
+import { Droplets, Trees, Utensils, ArrowUp, Instagram, Facebook, Youtube } from 'lucide-react';
 import { HOTEL_INFO, ORIGINAL_IMAGES } from '../data/resortData';
 
 export const Footer: React.FC = () => {
@@ -119,19 +119,51 @@ export const Footer: React.FC = () => {
 
         </div>
 
-        {/* BOTTOM COPYRIGHT */}
+        {/* BOTTOM COPYRIGHT & SOCIAL MEDIA */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-poppins text-cream/60">
-          <p>© 2026 Sagar Kinare Hotel & Resorts. All Rights Reserved. Designed with Leela & SeleQtions Luxury Standards.</p>
+          <p>© 2026 Sagar Kinare Hotel & Resorts. All Rights Reserved.</p>
 
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-2 text-gold hover:text-white transition-colors group"
-          >
-            <span>Back to Top</span>
-            <div className="w-7 h-7 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <ArrowUp className="w-3.5 h-3.5" />
-            </div>
-          </button>
+          <div className="flex items-center gap-4">
+            <a
+              href={HOTEL_INFO.socials.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="w-8 h-8 rounded-full bg-white/5 border border-gold/20 flex items-center justify-center text-cream hover:text-gold hover:border-gold hover:scale-110 transition-all"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
+
+            <a
+              href={HOTEL_INFO.socials.facebook}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Facebook"
+              className="w-8 h-8 rounded-full bg-white/5 border border-gold/20 flex items-center justify-center text-cream hover:text-gold hover:border-gold hover:scale-110 transition-all"
+            >
+              <Facebook className="w-4 h-4" />
+            </a>
+
+            <a
+              href={HOTEL_INFO.socials.youtube}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Youtube"
+              className="w-8 h-8 rounded-full bg-white/5 border border-gold/20 flex items-center justify-center text-cream hover:text-gold hover:border-gold hover:scale-110 transition-all"
+            >
+              <Youtube className="w-4 h-4" />
+            </a>
+
+            <button
+              onClick={scrollToTop}
+              className="flex items-center gap-2 text-gold hover:text-white transition-colors group ml-4"
+            >
+              <span>Back to Top</span>
+              <div className="w-7 h-7 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center group-hover:scale-110 transition-transform">
+                <ArrowUp className="w-3.5 h-3.5" />
+              </div>
+            </button>
+          </div>
         </div>
 
       </div>

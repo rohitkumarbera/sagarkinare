@@ -116,10 +116,9 @@ export const HOTEL_INFO = {
   googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3698.868735231718!2d87.62562141502447!3d21.650894085663734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0339d4e5f7a29f%3A0xb3a82643a6d4bc8f!2sSagar%20Kinare%20Hotel%20%26%20Resorts%2C%20Tajpur!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
   whatsappNumber: "919593165851",
   socials: {
-    facebook: "https://facebook.com/sagarkinaretajpur",
-    instagram: "https://instagram.com/sagarkinaretajpur",
-    twitter: "https://twitter.com/sagarkinaretajpur",
-    tripadvisor: "https://tripadvisor.com"
+    facebook: "https://www.facebook.com/sagarkinare.tajpur?rdid=93X515nzbJ4LGBFh&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1EXQpYzn7x%2F#",
+    instagram: "https://www.instagram.com/_sagar_kinare_?igsh=eGRmd3lvOWwzY3dq",
+    youtube: "https://www.youtube.com/@sagarkinare.tajpur"
   }
 };
 

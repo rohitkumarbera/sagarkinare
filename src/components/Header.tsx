@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Mail, Menu, X, Calendar, ShieldCheck, MapPin } from 'lucide-react';
+import { Phone, Mail, Menu, X, Calendar, ShieldCheck, MapPin, Instagram, Facebook, Youtube } from 'lucide-react';
 import { HOTEL_INFO, ORIGINAL_IMAGES } from '../data/resortData';
-import { TajpurWeather } from './TajpurWeather';
 import { LuxuryBookingModal } from './LuxuryBookingModal';
 
 export const Header: React.FC = () => {
@@ -80,16 +79,46 @@ export const Header: React.FC = () => {
               <span className="tracking-wider">100% Sweet Water Guarantee</span>
             </div>
 
-            {/* RIGHT: Location & Weather */}
-            <div className="hidden sm:flex items-center gap-5">
-              <div className="flex items-center gap-1.5 text-[#F8F6F2]/80 font-medium">
+            {/* RIGHT: Social Media Links (Instagram, Facebook, Youtube) */}
+            <div className="flex items-center gap-4">
+              <div className="hidden sm:flex items-center gap-1.5 text-[#F8F6F2]/80 font-medium mr-2">
                 <MapPin className="w-3.5 h-3.5 text-[#C8A45A]" />
                 <span>Tajpur Beach</span>
               </div>
 
-              <span className="text-[#C8A45A]/40">•</span>
+              <span className="hidden sm:inline text-[#C8A45A]/40">•</span>
 
-              <TajpurWeather />
+              <div className="flex items-center gap-3">
+                <a
+                  href={HOTEL_INFO.socials.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Sagar Kinare Instagram"
+                  className="p-1 rounded-full text-[#F8F6F2] hover:text-[#C8A45A] hover:scale-110 transition-all duration-300"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+
+                <a
+                  href={HOTEL_INFO.socials.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Sagar Kinare Facebook"
+                  className="p-1 rounded-full text-[#F8F6F2] hover:text-[#C8A45A] hover:scale-110 transition-all duration-300"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+
+                <a
+                  href={HOTEL_INFO.socials.youtube}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Sagar Kinare Youtube"
+                  className="p-1 rounded-full text-[#F8F6F2] hover:text-[#C8A45A] hover:scale-110 transition-all duration-300"
+                >
+                  <Youtube className="w-4 h-4" />
+                </a>
+              </div>
             </div>
 
             {/* Mobile Right: Direct Book Now Launcher Modal */}
