@@ -25,13 +25,13 @@ export const BlogsPage: React.FC = () => {
         <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.span initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0 }} className="text-gold-light text-xs font-poppins uppercase tracking-widest font-extrabold block mb-2" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.8)' }}>
             Coastal Journal
-          </span>
+          </motion.span>
           <motion.h1 initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }} className="font-serif text-4xl sm:text-6xl font-extrabold text-white tracking-wide leading-tight" style={{ textShadow: '0 3px 12px rgba(0,0,0,0.85), 0 2px 4px rgba(0,0,0,0.9)' }}>
             Tajpur Travel Guides & Stories
-          </h1>
+          </motion.h1>
           <motion.p initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.3 }} className="text-white/95 text-xs sm:text-sm max-w-2xl mx-auto mt-4 font-sans font-medium leading-relaxed" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.8)' }}>
             Discover insider tips on Tajpur red crab beach walks, best seafood seasons, and nearby day trips to Shankarpur & Mandarmani.
-          </p>
+          </motion.p>
         </div>
       </section>
 
