@@ -124,8 +124,9 @@ export const HOTEL_INFO = {
 
 // Real Downloaded Original Images Mapped from tajpursagarkinare.com
 export const ORIGINAL_IMAGES = {
-  heroBanner: "./images/original/hero_banner_tajpur.webp",
-  heroBannerJpg: "./images/original/hero_banner_tajpur.jpg",
+  heroBanner: "./images/original/resort_night_fountain_illumination.jpg",
+  heroBannerJpg: "./images/original/resort_night_fountain_illumination.jpg",
+  nightFountainBanner: "./images/original/resort_night_fountain_illumination.jpg",
   propertyOverview: "./images/original/1490580_1405253236381114_107032954_o.jpg-3991_1684908055.jpg",
   deluxeRoom: "./images/original/8646_1684906992.jpg",
   semiDeluxeRoom: "./images/original/1443_1684906720.jpg",

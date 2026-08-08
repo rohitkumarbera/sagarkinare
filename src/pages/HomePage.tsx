@@ -477,7 +477,7 @@ export const HomePage: React.FC = () => {
       <section className="relative py-28 text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src={ORIGINAL_IMAGES.heroBanner}
+            src={ORIGINAL_IMAGES.nightFountainBanner}
             alt="Tajpur Beach Resort CTA"
             className="w-full h-full object-cover object-center"
             style={{ backgroundSize: 'cover', backgroundPosition: 'center' }}
