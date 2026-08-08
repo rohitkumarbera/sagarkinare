@@ -36,9 +36,13 @@ export const AIConcierge: React.FC = () => {
 
     if (isOpen) {
       window.addEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
     }
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
 
@@ -134,7 +138,7 @@ export const AIConcierge: React.FC = () => {
   return (
     <>
       {/* ALWAYS VISIBLE FLOATING AI LAUNCHER BUTTON */}
-      <div className="fixed bottom-6 right-6 z-40">
+      <div className="fixed bottom-6 right-6 z-[9995]">
         <motion.button
           onClick={() => setIsOpen(true)}
           whileHover={{ scale: 1.05 }}
@@ -168,22 +172,22 @@ export const AIConcierge: React.FC = () => {
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* DIM BACKDROP PAGE WITH BACKDROP BLUR */}
+            {/* DIM BACKDROP PAGE WITH BACKDROP BLUR - HIGHER THAN STICKY HEADER (z-[9990]) */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm"
+              className="fixed inset-0 z-[10002] bg-black/55 backdrop-blur-md"
             />
 
-            {/* AI CHAT WINDOW CONTAINER (Viewport-Aware Dimensions) */}
+            {/* AI CHAT WINDOW CONTAINER (Higher than Backdrop z-[10002] & Header z-[9990]) */}
             <motion.div
               initial={{ opacity: 0, y: 20, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-              className="fixed z-50 bottom-0 right-0 sm:bottom-6 sm:right-6 w-full sm:w-[380px] md:w-[420px] h-[calc(100vh-80px)] sm:h-[min(720px,calc(100vh-120px))] bg-[#F8F5F0] border border-[#E6DED2] rounded-t-[24px] sm:rounded-[24px] shadow-[0_30px_80px_rgba(0,0,0,0.18)] flex flex-col overflow-hidden text-[#1E1B18]"
+              className="fixed z-[10003] bottom-0 right-0 sm:bottom-6 sm:right-6 w-full sm:w-[380px] md:w-[420px] h-[calc(100vh-80px)] sm:h-[min(720px,calc(100vh-120px))] bg-[#F8F5F0] border border-[#E6DED2] rounded-t-[24px] sm:rounded-[24px] shadow-[0_30px_90px_rgba(0,0,0,0.35)] flex flex-col overflow-hidden text-[#1E1B18]"
             >
               
               {/* CHAT HEADER */}
