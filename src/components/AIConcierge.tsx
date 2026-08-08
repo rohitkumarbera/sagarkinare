@@ -94,7 +94,7 @@ export const AIConcierge: React.FC = () => {
       let actions: { label: string; action: string }[] | undefined = undefined;
 
       if (lower.includes('tariff') || lower.includes('price') || lower.includes('room') || lower.includes('suite') || lower.includes('tariffs') || lower.includes('book')) {
-        replyText = `Our luxury accommodations feature 4 distinct suite categories:\n\n• Deluxe AC Double Bed Suite — ₹2,800/night\n• Executive Family Suite (4 Pax) — ₹3,800/night\n• Super Deluxe Sea Breeze Suite — ₹3,200/night\n• Standard Non-AC Cottage — ₹1,800/night\n\nAll suites include guaranteed 100% sweet groundwater showers, complimentary breakfast, high-speed Wi-Fi, and 24/7 room service.`;
+        replyText = `Our luxury accommodations tariff rates:\n\n• Standard Room — ₹2,100/night\n• Semi-Deluxe AC Room — ₹2,100/night\n• Suit Room / Deluxe AC Room — ₹4,000/night\n• Executive Family Suit Room — ₹4,000/night\n\nAll suites include guaranteed 100% sweet groundwater showers, complimentary breakfast, high-speed Wi-Fi, and 24/7 power backup.`;
         actions = [
           { label: 'Book Your Stay Now', action: 'book-now' },
           { label: '🌊 Sweet Water Details', action: 'sweetwater' },
